@@ -31,11 +31,11 @@ vim.opt.spelllang = "en,pt"
 vim.opt.smartcase = true -- smart case
 vim.opt.smartindent = true -- make indenting smarter againvim.opt.smartcase = true -- smart case
 
-vim.opt.foldenable = true
+vim.opt.foldenable = false
 vim.opt.foldlevel = 20
 vim.opt.foldmethod = "manual"
 -- vim.opt.foldexpr = "vim_treesitter#foldexpr()"
-vim.opt.colorcolumn = "99999"
+--vim.opt.colorcolumn = "99999"
 vim.opt.updatetime = 100 -- faster completion
 vim.opt.mouse = "a"
 
@@ -54,29 +54,34 @@ lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 lvim.keys.normal_mode["<C-e>"] = ":RnvimrToggle<CR>"
 lvim.keys.normal_mode["<C-t>"] = ":RnvimrResize<CR>"
+lvim.keys.normal_mode["<C-m>"] = ":!mdbook build<CR>"
+
 
 -- unmap a default keymapping
 -- vim.keymap.del("n", "<C-Up>")
+--
 -- override a default keymapping
--- lvim.keys.normal_mode["<C-q>"] = ":q<cr>" -- or vim.keymap.set("n", "<C-q>", ":q<cr>" )
+lvim.keys.insert_mode["<C-j>"] = "<Esc>" -- or vim.keymap.set("n", "<C-q>", ":q<cr>" )
 
 -- Change Telescope navigation to use j and k for navigation and n and p for history in both input and normal mode.
 -- we use protected-mode (pcall) just in case the plugin wasn't loaded yet.
--- local _, actions = pcall(require, "telescope.actions")
--- lvim.builtin.telescope.defaults.mappings = {
---   -- for input mode
---   i = {
---     ["<C-j>"] = actions.move_selection_next,
---     ["<C-k>"] = actions.move_selection_previous,
---     ["<C-n>"] = actions.cycle_history_next,
---     ["<C-p>"] = actions.cycle_history_prev,
---   },
---   -- for normal mode
---   n = {
---     ["<C-j>"] = actions.move_selection_next,
---     ["<C-k>"] = actions.move_selection_previous,
---   },
--- }
+ local _, actions = pcall(require, "telescope.actions")
+--
+--
+ lvim.builtin.telescope.defaults.mappings = {
+   -- for input mode
+   i = {
+     ["<C-j>"] = actions.move_selection_next,
+     ["<C-k>"] = actions.move_selection_previous,
+     ["<C-n>"] = actions.cycle_history_next,
+     ["<C-p>"] = actions.cycle_history_prev,
+   },
+   -- for normal mode
+   n = {
+     ["<C-j>"] = actions.move_selection_next,
+     ["<C-k>"] = actions.move_selection_previous,
+   },
+ }
 
 -- Change theme settings
 -- lvim.builtin.theme.options.dim_inactive = true
@@ -126,7 +131,7 @@ lvim.builtin.treesitter.ensure_installed = {
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enable = true
-lvim.builtin.treesitter.rainbow.enable = true
+--lvim.builtin.treesitter.rainbow.enable = true
 
 
 
@@ -217,9 +222,6 @@ lvim.builtin.treesitter.rainbow.enable = true
 --
 -- Additional Plugins
  lvim.plugins = {
-		 {
-			 "p00f/nvim-ts-rainbow"
-		 },
      {
        "Pocco81/auto-save.nvim",
         enabled = true,
