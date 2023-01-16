@@ -4,6 +4,12 @@ case $- in
     *) return;;
 esac
 
+# mcfly options
+export MCFLY_KEY_SCHEME=vim
+export MCFLY_RESULTS_SORT=LAST_RUN
+export MCFLY_DISABLE_MENU=TRUE
+export MCFLY_RESULTS=30
+
 # Android tools
 export ANDROID_SDK_ROOT='/opt/android-sdk'
 export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools/
@@ -162,3 +168,5 @@ alias cat='bat'
 alias cd='z'
 alias cp='xcp'
 alias hx='helix'
+
+source /usr/share/doc/mcfly/mcfly.bash

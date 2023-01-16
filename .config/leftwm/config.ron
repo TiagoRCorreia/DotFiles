@@ -35,10 +35,15 @@
     insert_behavior: Bottom,
 
     scratchpad: [
-        (name: "Alacritty", value: "alacritty", x: 860, y: 390, height: 300, width: 200),
+        (name: "Alacritty", value: "alacritty", x: 200,y: 100, height: 600, width: 1000),
     ],
 
-    window_rules: [(window_title: "MEGAsync", spawn_on_tag: 5, spawn_floating:true),],
+    window_rules: [
+
+    (window_title: "MEGAsync", spawn_on_tag: 5, spawn_floating:true),
+    (window_title: "Google", spawn_on_tag: 2),
+
+    ],
 
     disable_current_tag_swap: false,
     disable_tile_drag: false,
@@ -97,10 +102,12 @@
         (command: MoveToTag, value: "8", modifier: ["modkey", "Shift"], key: "8"),
         (command: MoveToTag, value: "9", modifier: ["modkey", "Shift"], key: "9"),
 
-        (command: IncreaseMainWidth,value: "5",modifier: ["modkey"],key: "a"),
-        (command: DecreaseMainWidth,value: "5",modifier: ["modkey"],key: "x"),
+        (command: IncreaseMainWidth,value: "5",modifier: ["modkey", "Shift"],key: "l"),
+        (command: DecreaseMainWidth,value: "5",modifier: ["modkey", "Shift"],key: "h"),
         (command: ToggleFullScreen,modifier: ["modkey"],key: "f"),
-        (command: ToggleScratchPad,value: "Alacritty" ,modifier: ["modkey"],key: "z"),
+
+        (command: ToggleScratchPad,value: "Alacritty" ,modifier: ["modkey"],key: "t"),
+        (command: ToggleSticky,modifier: ["modkey"],key: "a")
     ],
     state_path: None,
 )

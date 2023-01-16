@@ -10,7 +10,7 @@ bufferline = "always"
 color-modes = true
 true-color = true
 cursorline = true
-cursorcolumn = true
+cursorcolumn = false
 completion-trigger-len = 1
 auto-format = false
 
@@ -21,9 +21,10 @@ mode-separator = "angled"
 
 [keys.normal]
 C-o = ":config-open"
-C-r = ":config-reload"
+#C-r = ":config-reload"
 C-n = ":sh mdbook build"
 C-s = ":w"
+C-r = ":sh tmux send-keys -t 1:0 'cargo run' Enter"
 
 C-h = "select_prev_sibling"
 C-j = "shrink_selection"
