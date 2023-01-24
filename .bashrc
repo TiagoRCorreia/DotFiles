@@ -170,3 +170,6 @@ alias cp='xcp'
 alias hx='helix'
 
 source /usr/share/doc/mcfly/mcfly.bash
+
+GRC_ALIASES=true
+[[ -s "/etc/profile.d/grc.sh" ]] && source /etc/grc.sh

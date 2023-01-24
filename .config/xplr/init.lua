@@ -40,13 +40,6 @@ require("xpm").setup({
   auto_cleanup = true,
 })
 
-require("tri-pane").setup({
-  layout_key = "T", -- In switch_layout mode
-  as_default_layout = true,
-  left_pane_width = { Percentage = 20 },
-  middle_pane_width = { Percentage = 50 },
-  right_pane_width = { Percentage = 30 },
-})
 
 require("fzf").setup{
   mode = "default",
@@ -74,7 +67,16 @@ require("zoxide").setup{
   key = "Z",
 }
 
+-- Just for testing with my plugin
 require("dua-cli").setup{
-  mode = "action",
-  key = "D",
+  mode = "default",
+  key = "i",
 }
+
+require("tri-pane").setup({
+  layout_key = "T",
+  as_default_layout = true,
+  left_pane_width = { Percentage = 13 },
+  middle_pane_width = { Percentage = 45 },
+  right_pane_width = { Percentage = 35 },
+})
