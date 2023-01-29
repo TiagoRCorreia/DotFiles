@@ -168,6 +168,7 @@ alias cat='bat'
 alias cd='z'
 alias cp='xcp'
 alias hx='helix'
+alias cg='cargo'
 
 source /usr/share/doc/mcfly/mcfly.bash
 
