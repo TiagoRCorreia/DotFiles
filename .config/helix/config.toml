@@ -99,6 +99,7 @@ g = { g = ["select_mode", "extend_to_line_bounds", "goto_file_start", "extend_to
 [keys.insert]
 esc = ["collapse_selection", "normal_mode"]
 C-j = "normal_mode"
+C-s = ":w"
 
 [keys.select]
 "{" = ["extend_to_line_bounds", "goto_prev_paragraph"]
