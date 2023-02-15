@@ -24,7 +24,7 @@ C-o = ":config-open"
 #C-r = ":config-reload"
 C-n = ":sh mdbook build"
 C-s = ":w"
-C-r = ":sh tmux send-keys -t 1:0 'cargo run' Enter"
+C-r = ":sh tmux send-keys -t 1:0 'clear && cargo run' Enter"
 C-x = ":buffer-close"
 "space" = {c = [":buffer-close"]}
 

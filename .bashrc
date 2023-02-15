@@ -17,10 +17,14 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin/
 export PATH=$PATH:$ANDROID_ROOT/emulator
 export PATH=$PATH:$ANDROID_SDK_ROOT/tools/
 
+
 # Default java version
 export JAVA_HOME='/usr/lib/jvm/java-8-openjdk'
-
 export PATH=$JAVA_HOME/bin:$PATH 
+
+export PATH=$PATH:/home/tiago/.cargo/bin/
+
+
 
 # LVim bin path
 export PATH=/home/tiago/.local/bin:$PATH
