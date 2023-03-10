@@ -28,12 +28,14 @@ lvim.leader = "space"
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
+lvim.keys.normal_mode["<C-j>"] = ":BufferLineMoveNext<CR>"
+lvim.keys.normal_mode["<C-k>"] = ":BufferLineMovePrev<CR>"
 lvim.keys.normal_mode["<C-e>"] = ":RnvimrToggle<CR>"
 lvim.keys.normal_mode["<C-t>"] = ":RnvimrResize<CR>"
 lvim.keys.normal_mode["<C-m>"] = ":!mdbook build<CR>"
 
 
-lvim.keys.insert_mode["<C-j>"] = "<Esc>"
+--lvim.keys.insert_mode["<C-j>"] = "<Esc>"
 
  local _, actions = pcall(require, "telescope.actions")
 
@@ -70,11 +72,19 @@ lvim.builtin.treesitter.ensure_installed = {
   "java",
   "yaml",
 	"php",
+	"dart",
+  "markdown",
+  "markdown_inline"
 }
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enable = true
 
+lvim.lsp.installer.setup.automatic_installation = true
+
+-- Flutter snippets enable
+local luasnip = require("luasnip")
+luasnip.filetype_extend("dart", { "flutter" })
 
 lvim.plugins = {
      {
@@ -90,12 +100,24 @@ lvim.plugins = {
 	   {
 		    "kevinhwang91/rnvimr"
 	   },
- }
+     {
+        "simrat39/rust-tools.nvim"
+     },
+    {
+        'dart-lang/dart-vim-plugin' 
+    },
+    {
+        'natebosch/vim-lsc'
+    },
+    {
+        'natebosch/vim-lsc-dart'
+    }
+}
 
--- vim.api.nvim_create_autocmd("BufWinLeave", {
- --  pattern = { "*.*"},
---   command = "mkview",
---  })
+vim.api.nvim_create_autocmd("BufWinLeave", {
+	pattern = { "*.*"},
+	command = "mkview",
+})
 
 --vim.api.nvim_create_autocmd("BufWinEnter", {
  -- pattern = { "*.*"},
